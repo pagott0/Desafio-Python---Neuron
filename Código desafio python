@@ -1,0 +1,110 @@
+ct = open('falasmp.txt')
+import random
+
+fr = open('frasespa.txt')
+
+
+def randometro(fname):
+    lines = open(fname).read().splitlines()
+    return print(random.choice(lines))
+
+
+def bruxometro():
+    pesopato = 1.6
+    peso = float(input('Qual o seu peso?'))
+    if peso == pesopato:
+        print('É uma bruxa!!')
+    else:
+        print('Ufa! Não é uma bruxa')
+
+
+def imcer():
+    ps = float(input('Digite o seu peso em kg: '))
+    at = float(input('Digite a sua altura em metros: '))
+    imc = ps / (at ** 2)
+    print('Seu IMC é:', imc, 'Tá na hora de cortar o hamburguer, não acha?')
+
+
+def joguinho():
+    opc = ['Pedra', 'Papel', 'Tesoura']
+    opcale = random.choice(opc)
+    esc = input('Você quer pedra, papel ou tesoura?')
+    print('Computador escolheu:', opcale)
+    if opcale == 'Pedra':
+        if esc == 'pedra':
+            print('Quase!')
+        elif esc == 'tesoura':
+            print('Ganheeeeei hahahaha')
+        elif esc == 'papel':
+            print('Nãoooooooo! Isso não vai acabar assim!')
+            joguinho()
+    elif opcale == 'Papel':
+        if esc == 'pedra':
+            print('Ganheeeeei hahahaha')
+        elif esc == 'tesoura':
+            print('Nãoooooooo! Isso não vai acabar assim!')
+            joguinho()
+        elif esc == 'papel':
+            print('Quase!')
+    elif opcale == 'Tesoura':
+        if esc == 'pedra':
+            print('Nãoooooooo! Isso não vai acabar assim!')
+            joguinho()
+        elif esc == 'tesoura':
+            print('Quase!')
+        elif esc == 'papel':
+            print('Ganheeeeei hahahaha')
+
+
+def ppt():
+    opc = ['Pedra', 'Papel', 'Tesoura']
+    opcale = random.choice(opc)
+
+
+percentage_chance = 0.10
+
+
+def aleat():
+    if random.random() < percentage_chance:
+        randometro('falasmp.txt')
+        doo = float(input('Me desculpe, me enganei... Você pode repetir sua opção?'))
+
+
+print('Bem vindo, tripulante! O dia está lindo hoje, igual a você.')  # 1
+print(
+    'Caso você queira que eu faça algo, digite 1, caso queira que eu lhe dê uma citação de Mont Python, digite 2.')  # 2
+try:
+    do = float(input('Digite: '))
+    if do == 1:
+        aleat()
+        print(
+            'Para calcular um IMC, digite 1, para saber se uma pessoa é ou não uma bruxa, digite 2, para jogar uma partida de pedra papel e tesoura, digite 3, se quiser ouvir uma piada, digite 4, e para sair, digite 5.')
+        op = float(input('Digite sua opção:'))
+        if op == 1:
+            aleat()
+            imcer()
+        elif op == 2:
+            aleat()
+            bruxometro()
+        elif op == 3:
+            aleat()
+            joguinho()
+        elif op == 4:
+            aleat()
+            print(
+                'O bêbado atravessa a rua fora da faixa e um carro buzina para ele: Bi-bi!, O bêbado responde: Eu também bibi, e não foi pouco não.')
+        elif op == 5:
+            aleat()
+            print('Até mais e obrigado, pelos peixes')
+    elif do == 2:
+        aleat()
+        print('“He´s not the Messiah. He´s a very naughty boy!” - Terry Jones, Monty Python')
+    else:
+        randometro('frasespa.txt')
+except:
+    randometro('frasespa.txt')
+
+
+
+
+
